@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+borrar=0
+objetos=()
+
+for a in "$@"; do
+  case "$a" in
+    -*) case "$a" in *d*) borrar=1 ;; esac ;;
+    *) objetos+=("$a") ;;
+  esac
+done
+
+[[ ${#objetos[@]} -gt 0 ]] || objetos=(.)
+
+declare -A visto=()
+
+revisar() {
+  local dir="$1"
+  find "$dir" -type f -printf '%s\t%p\n' 2>/dev/null | sort -t$'\t' -k1,1n |
+    while IFS=$'\t' read -r sz path; do
+      [[ -f "$path" ]] || continue
+      clave="$sz|$(md5sum "$path" | cut -d' ' -f1)"
+      if [[ -n "${visto[$clave]:-}" ]]; then
+      if [[ "$borrar" == "1" ]]; then
+        rm -f -- "$path"
+        printf 'borrado: %s\n' "$path"
+      else
+          printf '%s\n%s\n\n' "${visto[$clave]}" "$path"
+        fi
+      else
+        visto["$clave"]="$path"
+      fi
+    done
+}
+
+for o in "${objetos[@]}"; do
+  revisar "$o"
+done

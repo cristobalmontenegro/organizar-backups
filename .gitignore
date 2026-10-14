@@ -1,0 +1,28 @@
+# ============================================================
+# OrganizarBackups — lo que NO se sube al repositorio
+# ============================================================
+
+# --- Estado y registros de ejecución (se crean al ejecutar) ---
+sistema/estado/
+sistema/logs/
+
+# --- Copias y artefactos ---
+/copias/
+*.zip
+*.gz
+*.tar
+*.bak
+
+# --- Configuración local con datos reales ---
+.env
+.env.*
+notificaciones/msmtprc
+
+# --- Basura de editores / sistema ---
+*~
+*.swp
+*.swo
+.DS_Store
+
+# --- Temporales ---
+*.tmp
