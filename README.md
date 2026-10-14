@@ -209,3 +209,30 @@ Typical flow (menu): **Preflight** → **Pull** → **Process** (clean + pack + 
 **ES:** Publicado bajo la licencia MIT. **EN:** Released under the MIT License.
 
 Consulta [`LICENSE`](LICENSE) · See [`LICENSE`](LICENSE).
+
+---
+
+## 👤 Author / Autoría
+
+**Cristóbal Montenegro**  
+GitHub: [@cristobalmontenegro](https://github.com/cristobalmontenegro)
+
+---
+
+## ☕ Support me / Apóyame
+
+**EN:** If any of these scripts saved you time, you can buy me a coffee. Thanks for the support!
+
+**ES:** Si alguno de estos scripts te ahorró tiempo, puedes invitarme un café. ¡Gracias por el apoyo!
+
+<p align="center">
+  <a href="https://ko-fi.com/cristobalmontenegro" target="_blank">
+    <img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" border="0" alt="Buy Me a Coffee at ko-fi.com" />
+  </a>
+</p>
+
+---
+
+## 📜 License / Licencia
+
+MIT — see [`LICENSE`](./LICENSE).
